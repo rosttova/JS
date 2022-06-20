@@ -1,0 +1,77 @@
+// 1*:Преобразовать написанный код в 26-33 пунктах в функцию, принимающую на вход возраст.
+// Пример: const checkAge = function(age) {
+// Ваши преобразования
+//}
+//Вывести в консоль результат работы функции с возрастами 17, 18, 61
+
+function testAge(age1, age2, age3) {
+if (age1 < age2) {
+console.log('You don’t have access cause your age is ' + age1 + ' It’s less then');
+}
+else if (age1 >= age2 && age1 < age3){
+    console.log('Welcome!');
+}
+else if (age1 > age3){
+    console.log('Keep calm and look Culture channel'); 
+} 
+else {
+    console.log('Technical work');
+}
+}
+testAge(17, 18, 61);
+
+// 2* 
+Преобразовать задание 1* таким образом, чтобы первым делом в функции проверялся тип данных. И если он не Number - кидалась ошибка.
+
+let checkAge = function (age1, age2, age3) {
+    if (typeof age1 == 'number' && typeof age2 == 'number' && typeof age3 == 'number') {
+        if (age1 < age2) {
+            console.log('You don’t have access cause your age is ' + age1 + ' It’s less then');
+        } else if (age1 >= age2 && age1 < age3) {
+            console.log('Welcome!');
+        } else if (age1 > age3) {
+            console.log('Keep calm and look Culture channel');
+        } else console.log('Technical work');
+
+    } else console.log('You wrote not a number');
+}
+
+checkAge('text', 18, 65);
+
+// 3**:
+//Преобразовать 2* таким образом, чтобы значение '2' (строка в которой лежит ТОЛЬКО ЦИФРА) пропускалось, преобразовываясь в number
+
+let enterAge1 = prompt('Введите число');
+let enterAge2 = prompt('Введите число');
+let enterAge3 = prompt('Введите число');
+
+function checkAge(enterAge1, enterAge2, enterAge3) {
+    age1 = Number(age1);     
+    age2 = Number(age2);    
+    age3 = Number(age3);                           
+
+    if (!isNaN(age1) || !isNaN(age2) || !isNaN(age3)){                         
+
+    if (age1 < age2) {               
+   
+        console.log("You don't have access cause your age is" + " "+ age1 + " "+ "It's less then")     
+    }
+    
+    else if (age1 >= age2 && age1 < age3)  {                                            
+    
+         
+        console.log("Welcome!" )
+    }
+    else if (age1 > age3 ) {                                                             
+    
+             console.log("Keep calm and look Culture channel!" )
+    }
+    
+    else {
+        console.log("Technical work" )                            
+    }
+    } else {console.log("not integer value")}
+
+}
+checkAge();
+
