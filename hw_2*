@@ -27,28 +27,33 @@ for (let i = 0; i < 5; i++) {
 console.log(result += ':)');
 }
 
-// 3**.  Написать функцию, которая принимает на вход слово. Задача функции посчитать и вывести в консоль, сколько в слове гласных, и сколько согласных букв.
+
+// *3. Написать функцию, которая принимает на вход слово. Задача функции посчитать и вывести в консоль, сколько в слове гласных, и сколько согласных букв.
 e.g. function getWordStructure(word)
 В консоли: 
 Слово (word) состоит из  (число) гласных и (число) согласных букв
 
-Проверки: 'case', 'Case', 'Check-list' */
+Проверки: 'case', 'Case', 'Check-list'
 
-let sogl = 0;
-let gl = 0;
-function getWordStructure(word){
-for (let i = 0; i < word.length; i++){
-    if (word[i] == 'a' ||  word[i] == 'e' || word[i] =='i' || word[i] == 'u' || word[i] == 'o' || word[i] == 'y')
-    {
-        gl = gl +1;
+let gl = ['a', 'e', 'i', 'u', 'o', 'y'];
+let sogl = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'];
+let glCount = 0;
+let soglCount = 0;
+
+function getWordStructure(word) {
+
+word = word.toLowerCase();
+
+for (let i = 0; i < word.length; i++) {
+    if (gl.includes(word[i])) {
+        glCount++;
+    } else if (sogl.includes(word[i])) {
+        soglCount++
     }
-    else if (word[i] == '-')
-    {
-       
-    }
-    else {sogl = sogl +1};
 }
-console.log('Слово ' + word + ' состоит из ' + gl + ' гласных и ' + sogl + ' согласных букв')
+
+
+console.log('Слово ' + word + ' состоит из ' + glCount + ' гласных и ' + soglCount + ' согласных букв')
 }
 
 getWordStructure('Check-list');
